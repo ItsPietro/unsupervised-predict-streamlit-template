@@ -53,8 +53,10 @@ def data_preprocessing(subset_size):
         Subset of movies selected for content-based filtering.
 
     """
+
     # Split genre data into individual words.
     movies['keyWords'] = movies['genres'].str.replace('|', ' ')
+
     # Subset of the data
     movies_subset = movies[:subset_size]
     return movies_subset
@@ -99,7 +101,7 @@ def content_model(movie_list,top_n=10):
     score_series_2 = pd.Series(rank_2).sort_values(ascending = False)
     score_series_3 = pd.Series(rank_3).sort_values(ascending = False)
     # Getting the indexes of the 10 most similar movies
-    listings = score_series_1.append(score_series_1).append(score_series_3).sort_values(ascending = False)
+    listings = score_series_1.append(score_series_1).append(score_series_2).append(score_series_3).sort_values(ascending = False)
 
     # Store movie names
     recommended_movies = []
