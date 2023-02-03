@@ -121,10 +121,13 @@ def main():
         st.write("Our dynamic app was built on the two main algorithms for recommender systems. They are:")
 
         if st.checkbox("Content-based filtering"):
-            st.write("Content-based filtering uses the features of movies to recommend other movies similar to what the user likes, based on their previous actions or movie ratings.")
+            image = Image.open("resources/imgs/content.png")
+            image1 = image.resize((350, 400))
+            st.image(image1)
         if st.checkbox("Collaborative-based filtering"):
-            st.write("Collaborative filtering-based recommender systems solely rely on past interactions between users and movies in order to suggest new movies. The features of every individual movie are not considered.")
-        #recommenders = st.radio("They are;", ("Content-based filtering", "Collaborative-based filtering"))
+            image = Image.open("resources/imgs/file1.png")
+            image2 = image.resize((350, 400))
+            st.image(image2)
 
     # Building the "Explore" page
     if page_selection == "Explore":
@@ -184,27 +187,23 @@ def main():
         Peter1 = Peter.resize((150, 155))
         Nnanna = Image.open("resources/imgs/Peter.jpg")
         Nnanna1 = Nnanna.resize((150, 155))
-        Kgakgamatso = Image.open("resources/imgs/Peter.jpg")
-        Kgakgamatso1 = Kgakgamatso.resize((150, 155))
-        Chiamaka = Image.open("resources/imgs/Peter.jpg")
+        Chiamaka = Image.open("resources/imgs/Ann.jpg")
         Chiamaka1 = Chiamaka.resize((150, 155))
         Maryam = Image.open("resources/imgs/Maryam1.jpg")
         Maryam1 = Maryam.resize((150, 155))
 
         col1, col2, col3 = st.columns(3)
-        with col1:
-            st.image(Akor1, width=150, caption="Akor Christian: Team Lead")
         with col2:
-            st.image(Maryam1, width=150, caption="Maryam Adebukola: Software Engineer")
-        with col3:
-            st.image(Kgakgamatso1, width=150, caption="Kgakgamatso Tsagae: Technical Lead")
-        
-        col1, col2, col3 = st.columns(3)
+            st.image(Akor1, width=150, caption="Akor Christian: Team Lead")
+            
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.image(Chiamaka1, width=150, caption="Ann Chiamaka: Project Manager")
         with col2:
             st.image(Nnanna1, width=150, caption="Nnanna Onwnuneme: Senior Data Scientist")
         with col3:
+            st.image(Maryam1, width=150, caption="Maryam Adebukola: Software Engineer")
+        with col4:
             st.image(Peter1, width=150, caption="Peter Okeke: Technical Support")
 
 
